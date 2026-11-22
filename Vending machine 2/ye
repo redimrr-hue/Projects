@@ -1,0 +1,12 @@
+name = input("Enter name: ") #Add the Analyst name here
+
+incident = input("Enter incident type: ") #Add the incident type here
+
+severity = input("Enter severity: ") #Add the severity of the incident here
+
+def summary(): 
+    print("Analyst:",name) 
+    print("Incident:",incident) 
+    print("Severity:",severity) 
+
+summary()

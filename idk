@@ -1,0 +1,12 @@
+class Dog:
+    # The Constructor method
+    def __init__(self, name, breed):
+        self.name = name    # Instance attribute
+        self.breed = breed  # Instance attribute
+
+    # Instance method
+    def bark(self):
+        return f"{self.name} says Woof!"
+
+bark = Dog("Buddy", "Golden Retriever")
+print(bark.bark())

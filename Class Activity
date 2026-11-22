@@ -1,0 +1,24 @@
+
+class CardPayment:
+    def pay(self, amount):
+        print(f"Paid {amount} using Credit Card.")
+
+
+class BankTransfer:
+    def pay(self, amount):
+        print(f"Paid {amount} using Bank Transfer.")
+
+
+class DigitalWallet:
+    def pay(self, amount):
+        print(f"Paid {amount} using Digital Wallet.")
+
+
+payment = CardPayment()
+payment.pay(100)
+
+payment = BankTransfer()
+payment.pay(200)
+
+payment = DigitalWallet()
+payment.pay(300)

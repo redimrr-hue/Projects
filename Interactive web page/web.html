@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html><body>
+    <H1>The Group Chat web</H1>
+    <canvas id='myCanvas' witdh='400' height="150">
+    </canvas>
+    <script>
+        var c = document.getElementById('myCanvas');
+        var ctx = c.getContext('2d')
+        ctx.fillStyle = '#00B4D8';
+        ctx.fillRect(10, 10, 400, 150);
+
+        ctx.fillStyle = 'white';
+        ctx.fillRect(15, 15, 30, 10);
+    </script>
+        
+    <audio controls loop>
+        <source src="We Shut Down An Applebee's  The Group Chat Podcast #72 - The Group Chat.mp3" type="audio/mpeg">
+        Your website does not support audio
+    </audio>
+    <div style="border: 2px solid black;">
+    <h3 contenteditable>Enter notes here</h3>
+    </div>
+    <form>
+        Name: <input type="text"><br>
+        Date: <input type="date"><br>
+        <label for="age">Age:</label>
+        <input type="range" id="age" name="age" min="18" value="0" step="1"><br>
+        </input>
+    </form>
+</body></html>

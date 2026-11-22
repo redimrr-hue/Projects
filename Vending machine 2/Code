@@ -1,0 +1,62 @@
+items = {
+    "A1": ["Chips", "Snack", 5.00, 10],
+    "A2": ["Water", "Drink", 1.00, 10],
+    "B1": ["Sandwich", "Snack", 10.00, 5],  
+    "B2": ["Juice", "Drink", 5.00, 6]
+}
+
+def display_items():
+    print("Available Items:")
+    for code, details in items.items():
+        name, category, price, stock = details
+        print(f"{code}: {name} ({category}) - ${price:.2f} - Quantity: {stock}")
+
+def suggest_items(selected_category):
+    if selected_category == "Snack":
+       print("You might also want a Drink")
+    elif selected_category == "Drink":
+       print("You might also want a Snack")
+
+def vending_machine():
+    balance = 0.0
+    running = True
+    while running:
+        print(display_items())
+        code = input("Enter the item code you want to purchase (or 'done' to quit): ").upper()
+        if code == 'DONE':
+            print("Thank you for using the vending machine!")
+            break
+
+        if code not in items:
+            print("Invalid item code. Please try again.")
+            continue
+
+        item = items[code]
+        name, category, price, stock = item
+
+        if stock == 0:
+            print("Sorry, this item is out of stock.")
+            continue
+    
+        print(f"{name} costs ${price:.2f}." )
+    
+        money = float(input("Please insert money: $"))
+    
+        balance += money
+
+        if balance < price:
+            print(f"Insufficient funds. You need ${price - balance:.2f} more.")
+            continue
+
+        items[code][3] -= 1  # Decrease stock by 1
+        balance -= price
+        print(f"Dispensing {name}. Your remaining balance is ${balance:.2f}.")
+
+        suggest_items(category)
+
+        again = input("Do you want to purchase another item? (yes/no): ").lower()
+        if again != 'yes':
+            running = False
+            print("Thank you for using the vending machine!")
+            
+vending_machine()

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Total Marks Caculator</title>
+    </head>
+    <body>
+        <h3>Student Marks Calculator</h3>
+        Math: <input type="number" id="math"><br><br>
+        English: <input type="number" id="english"><br><br>
+        Science: <input type="number" id="science"><br><br>
+        <button onclick="calculateTotal()">Calculate Total</button>
+        <h4>Total Marks: <span id="total"></span></h4>
+        <script>
+            function calculateTotal() {
+                let m = Number(document.getElementById("math").value);
+                let e = Number(document.getElementById("english").value);
+                let s = Number(document.getElementById("science").value);
+                let total = m + e + s;
+                document.getElementById("total").innerText = total;
+            }
+        </script>
+    </body>
+</html>
